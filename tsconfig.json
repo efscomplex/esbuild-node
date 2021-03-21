@@ -1,0 +1,12 @@
+{
+	"compilerOptions": {
+		"baseUrl": "src",
+		"esModuleInterop": true,
+		"jsx": "react-jsx",
+		"isolatedModules": true,
+		"paths": {
+			"components/*": ["src/components/*"]
+		}
+	},
+	"exclude": ["build", "node_modules"]
+}

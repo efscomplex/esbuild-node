@@ -4,7 +4,9 @@ require('esbuild').buildSync({
 	platform: 'node',
 	outfile: 'build/app.js',
 	external: ['express'],
+	loader: { '.png': 'file' },
 	define: {
 		'process.env.NODE_ENV': '"production"'
-	}
+	},
+	inject: ['./react-shim.js']
 })

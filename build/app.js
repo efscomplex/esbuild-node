@@ -1407,14 +1407,29 @@ var require_server = __commonJS((exports2, module2) => {
   module2.exports = require_server_node();
 });
 
+// react-shim.js
+var React = __toModule(require_react());
+
 // src/index.ts
 var import_express = __toModule(require("express"));
 
 // src/app/index.tsx
-var import_react = __toModule(require_react());
+var import_react2 = __toModule(require_react());
 var import_server = __toModule(require_server());
-var App = /* @__PURE__ */ import_react.default.createElement("h1", null, "hello world from my react server side app!");
-var app_default = import_server.default.renderToString(App);
+
+// src/app/components/Layout.tsx
+var import_react = __toModule(require_react());
+function Layout({children}) {
+  return /* @__PURE__ */ import_react.default.createElement("div", null, children);
+}
+
+// src/app/App.tsx
+function App() {
+  return /* @__PURE__ */ React.createElement(Layout, null, "hello from the app");
+}
+
+// src/app/index.tsx
+var app_default = import_server.default.renderToString(/* @__PURE__ */ import_react2.default.createElement(App, null));
 
 // src/index.ts
 var app = (0, import_express.default)();
