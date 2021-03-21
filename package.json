@@ -1,0 +1,16 @@
+{
+	"name": "esbuild-node",
+	"version": "1.0.0",
+	"main": "index.js",
+	"license": "MIT",
+	"scripts": {
+		"serve": "nodemon --watch build/* --exec node build/app.js",
+		"build": "node esbuild",
+		"start": "nodemon --watch src  -e ts,tsx  --exec yarn build"
+	},
+	"devDependencies": {
+		"esbuild": "^0.9.6",
+		"express": "^4.17.1",
+		"nodemon": "^2.0.7"
+	}
+}
