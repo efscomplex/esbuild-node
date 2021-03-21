@@ -1414,22 +1414,32 @@ var React = __toModule(require_react());
 var import_express = __toModule(require("express"));
 
 // src/app/index.tsx
-var import_react2 = __toModule(require_react());
+var import_react3 = __toModule(require_react());
 var import_server = __toModule(require_server());
 
 // src/app/components/Layout.tsx
+var import_react2 = __toModule(require_react());
+
+// src/app/components/Header.tsx
 var import_react = __toModule(require_react());
+function Header() {
+  return /* @__PURE__ */ import_react.default.createElement("header", null, "this is a header");
+}
+
+// src/app/components/Layout.tsx
 function Layout({children}) {
-  return /* @__PURE__ */ import_react.default.createElement("div", null, children);
+  return /* @__PURE__ */ import_react2.default.createElement(import_react2.default.Fragment, null, /* @__PURE__ */ import_react2.default.createElement(Header, null), /* @__PURE__ */ import_react2.default.createElement("main", null, children), /* @__PURE__ */ import_react2.default.createElement("footer", null, " @copyright"));
 }
 
 // src/app/App.tsx
 function App() {
-  return /* @__PURE__ */ React.createElement(Layout, null, "hello from the app");
+  return /* @__PURE__ */ React.createElement("div", {
+    id: "root"
+  }, /* @__PURE__ */ React.createElement(Layout, null, "hello from the app"));
 }
 
 // src/app/index.tsx
-var app_default = import_server.default.renderToString(/* @__PURE__ */ import_react2.default.createElement(App, null));
+var app_default = import_server.default.renderToString(/* @__PURE__ */ import_react3.default.createElement(App, null));
 
 // src/index.ts
 var app = (0, import_express.default)();
