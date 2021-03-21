@@ -3,6 +3,7 @@ require('esbuild').buildSync({
 	bundle: true,
 	platform: 'node',
 	outfile: 'build/app.js',
+	external: ['express'],
 	define: {
 		'process.env.NODE_ENV': '"production"'
 	}
